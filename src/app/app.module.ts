@@ -27,6 +27,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsPipe } from './posts.pipe';
+import { EventComponent } from './event/event.component';
+import { PastEventsComponent } from './past-events/past-events.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { PostsPipe } from './posts.pipe';
     PostComponent,
     LoginComponent,
     RegisterComponent,
-    PostsPipe
+    PostsPipe,
+    EventComponent,
+    PastEventsComponent
   ],
   imports: [
     BrowserModule,
