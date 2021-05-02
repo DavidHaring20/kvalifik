@@ -50,7 +50,7 @@ export class DataService {
   }
 
   public deleteEvent(id: any) {
-    // delete a post
+    //delete an event
   }
 
 }
