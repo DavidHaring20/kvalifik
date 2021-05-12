@@ -14,18 +14,20 @@ export class UserState {
     loggedInUser: User;
     token: string;
 }
-// export class EventState {
-//     events: Event[];
-// }
+
+export class EventState {
+    events: Event[];
+}
 
 export class AppState {
     posts?: PostState;
     users?: UserState;
-    // events?: EventState;
+    events?: EventState;
 }
+
 export const rootReducer = combineReducers<AppState>({
     posts: postsReducer,
-    users: usersReducer
+    users: usersReducer,
     // events: eventsReducer,
 
     // router: routerReducer
