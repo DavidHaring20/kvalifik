@@ -23,7 +23,7 @@ import { AppState } from './store/Store';
 
 import { rootReducer } from './store/store';
 import { LoginComponent } from './login/login.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule} from '@angular/material/grid-list';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsPipe } from './posts.pipe';
