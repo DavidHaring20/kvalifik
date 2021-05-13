@@ -15,8 +15,8 @@ export class EventsActions{
   static READ_EVENTS: string = 'READ_EVENTS';
 
 
-  readEvents() {
-    this.eventService.readEvents().subscribe((result: any) => {
+  readEvent() {
+    this.eventService.readEvent().subscribe((result: any) => {
       console.log("result from server");
       console.log(result);
 

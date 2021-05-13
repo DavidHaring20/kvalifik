@@ -1,6 +1,3 @@
-
-import { User } from "./User";
-
 export class Event {
     eventId ;
     eventName : string;
@@ -13,8 +10,3 @@ export class Event {
 }
 
 
-export class UserVm {
-    firstName: string;
-    lastName: string;
-    profileImage?: string;
-}

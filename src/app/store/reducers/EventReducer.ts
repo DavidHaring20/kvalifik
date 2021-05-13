@@ -12,9 +12,9 @@ export const events = [
     {eventId :'1',eventName :'Winter Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Lygten, Copenhagen',status:'published'} as Event
   ];
 
-  const INITIAL_STATE: EventState = {eventId :'0' ,eventName :'Pride',startTime : '00:00',endTime :'00:00',createdDate:new Date(2021 , 1, 1),location:'Copenhagen',status:' not published'};
+  const EVENT_INITIAL_STATE: EventState = {eventId :'0' ,eventName :'Pride',startTime : '00:00',endTime :'00:00',createdDate:new Date(2021 , 1, 1),location:'Copenhagen',status:' not published'};
 
-export function eventsReducer(state: EventState = INITIAL_STATE, action: any) {
+export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: any) {
     switch (action.type) {
        case EventsActions.READ_EVENTS:
            return tassign(state, {events: action.payload});
