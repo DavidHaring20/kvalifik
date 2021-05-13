@@ -21,7 +21,7 @@ export class EventsComponent implements OnInit {
     this.eventActions.readEvents();
 
     this.ngRedux.select(state => state.events).subscribe(res => {
-      // this.events = res.events;
+      this.events = res.events;
     });
   }
 }

@@ -2,7 +2,7 @@
 import { User } from "./User";
 
 export class Event {
-    eventId;
+    eventId ;
     eventName : string;
     startTime : string;
     endTime :string;
