@@ -4,6 +4,8 @@ import { Post } from '../entities/Post';
 import { User } from '../entities/User';
 import { postsReducer } from './reducers/PostReducer';
 import { usersReducer } from './reducers/UserReducer';
+import { Event} from '../entities/Event';
+import { eventsReducer} from './reducers/EventReducer';
 
 export class PostState {
     isHappy: boolean;
@@ -28,7 +30,7 @@ export class AppState {
 export const rootReducer = combineReducers<AppState>({
     posts: postsReducer,
     users: usersReducer,
-    // events: eventsReducer,
+    events: eventsReducer
 
     // router: routerReducer
 });
