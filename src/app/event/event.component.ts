@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../entities/Event';
 
@@ -9,10 +9,14 @@ import { Event } from '../entities/Event';
 })
 export class EventComponent implements OnInit {
   @Input() event: Event;
+  @Output() eventClicked: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  editEvent(eventId: string): void {
+    this.eventClicked.emit(eventId);
   }
 
 }

@@ -1,10 +1,15 @@
 <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{event.eventName}}</mat-card-title>
-    <mat-card-subtitle>{{event.createdDate | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
-    <mat-card-subtitle>{{event.startTime }}</mat-card-subtitle>
-    <mat-card-subtitle>{{event.endTime }}</mat-card-subtitle>
-    <mat-card-subtitle>{{event.location }}</mat-card-subtitle>
-    <mat-card-subtitle>{{event.status }}</mat-card-subtitle>
+    <mat-card-subtitle><span>Created Date: </span>{{event.createdDate | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
+    <mat-card-subtitle><span>Start Time: </span>{{event.startTime }}</mat-card-subtitle>
+    <mat-card-subtitle><span>End Time: </span>{{event.endTime }}</mat-card-subtitle>
+    <mat-card-subtitle><span>Location: </span>{{event.location }}</mat-card-subtitle>
+    <mat-card-subtitle><span>Status: </span>{{event.status }}</mat-card-subtitle>
 </mat-card-header>
+<mat-card-actions>
+    <button mat-stroked-button color="primary" 
+      (click)="editEvent(event.eventId)" class="e2e-edit">Edit Event</button>  
+      <button mat-stroked-button color="warn">Delete Event</button>
+</mat-card-actions>
   

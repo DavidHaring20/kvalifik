@@ -23,7 +23,7 @@ export class NewediteventComponent implements OnInit {
 
   ngOnInit(): void {
     const eventId: string = this.route.snapshot.paramMap.get('id');
-    console.log("this is id: " + eventId);
+    
     if (eventId != null) {
       this.headerTitle = "Edit Event";
       this.editMode = true;
@@ -40,8 +40,10 @@ export class NewediteventComponent implements OnInit {
 
     this.eventForm = this.fb.group({
       eventName: [this.selectedEvent.eventName, Validators.required],
-  
+      startTime: [this.selectedEvent.startTime, Validators.required],
+      endTime: [this.selectedEvent.endTime, Validators.required],
       location: [this.selectedEvent.location, Validators.required],
+      status: [this.selectedEvent.status, Validators.required]
     });
   }
 
@@ -55,7 +57,10 @@ export class NewediteventComponent implements OnInit {
         this.eventsActions.addEvent(this.selectedEvent);
       }else {
         this.selectedEvent.eventName = this.eventForm.value.eventName;
+        this.selectedEvent.startTime = this.eventForm.value.startTime;
+        this.selectedEvent.endTime = this.eventForm.value.endTime;
         this.selectedEvent.location = this.eventForm.value.location;
+        this.selectedEvent.status = this.eventForm.value.status;
 
         this.eventsActions.updateEvent(this.selectedEvent);
       }
