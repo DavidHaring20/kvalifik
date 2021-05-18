@@ -1,4 +1,10 @@
-<div class="event">
-    <p> Events</p>
-    
-</div>
+<mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{event.eventName}}</mat-card-title>
+    <mat-card-subtitle>{{event.createdDate | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
+    <mat-card-subtitle>{{event.startTime }}</mat-card-subtitle>
+    <mat-card-subtitle>{{event.endTime }}</mat-card-subtitle>
+    <mat-card-subtitle>{{event.location }}</mat-card-subtitle>
+    <mat-card-subtitle>{{event.status }}</mat-card-subtitle>
+</mat-card-header>
+  
