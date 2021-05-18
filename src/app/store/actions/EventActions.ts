@@ -36,7 +36,6 @@ export class EventsActions{
   }
 
   addEvent(newEvent: Event) : void {
-
     this.eventService.saveEvent(newEvent).subscribe((result: any) => {
       console.log("result from saving");
       console.log(result);
@@ -49,4 +48,12 @@ export class EventsActions{
       });
     });
   }
+
+  updateEvent(updatedEvent: Event) : void {
+    this.ngRedux.dispatch({
+        type: EventsActions.UPDATE_EVENT,
+        payload: updatedEvent
+    });
+  }
+
 }

@@ -1,1 +1,21 @@
 <p>neweditevent works!</p>
+<h3>{{headerTitle}}</h3>
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmitEvent()">
+
+    <p>
+        <mat-form-field appearance="legacy" class="example-full-width">
+          <mat-label>Event Name</mat-label>
+          <input matInput id="titleInput" placeholder="Event Name" formControlName="eventName">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy" class="example-full-width">
+          <mat-label>location</mat-label>
+          <input matInput id="titleInput" placeholder="Location" formControlName="location">
+        </mat-form-field>
+        <button mat-raised-button id="saveEvent" color="primary">Save</button>
+      </p>
+
+
+</form>
