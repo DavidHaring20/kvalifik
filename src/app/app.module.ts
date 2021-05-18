@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostsPipe } from './posts.pipe';
 import { EventComponent } from './event/event.component';
 import { PastEventsComponent } from './past-events/past-events.component';
+import { NewediteventComponent } from './neweditevent/neweditevent.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PastEventsComponent } from './past-events/past-events.component';
     RegisterComponent,
     PostsPipe,
     EventComponent,
-    PastEventsComponent
+    PastEventsComponent,
+    NewediteventComponent
   ],
   imports: [
     BrowserModule,

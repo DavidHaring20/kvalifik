@@ -16,6 +16,9 @@ export const events = [
 
 export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: any) {
     switch (action.type) {
+      case EventsActions.ADD_EVENT:
+        return tassign(state, {events: [...state.events, action.payload]});
+
       case EventsActions.READ_EVENTS:
         return tassign(state, {events: action.payload});
 

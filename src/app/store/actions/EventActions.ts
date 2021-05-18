@@ -35,6 +35,18 @@ export class EventsActions{
     });
   }
 
+  addEvent(newEvent: Event) : void {
 
+    this.eventService.saveEvent(newEvent).subscribe((result: any) => {
+      console.log("result from saving");
+      console.log(result);
 
+      newEvent.eventId = result.name;
+
+      this.ngRedux.dispatch({
+        type: EventsActions.ADD_EVENT,
+        payload: newEvent
+      });
+    });
+  }
 }
