@@ -23,7 +23,7 @@ export class NewediteventComponent implements OnInit {
 
   ngOnInit(): void {
     const eventId: string = this.route.snapshot.paramMap.get('id');
-    
+    console.log(eventId);
     if (eventId != null) {
       this.headerTitle = "Edit Event";
       this.editMode = true;

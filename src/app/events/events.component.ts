@@ -13,6 +13,7 @@ import { AppState } from '../store/Store';
 })
 export class EventsComponent implements OnInit {
   public events: Event[];
+  public search: string = '';
 
   constructor(private router: Router, private tempDataService: DataService,
     private ngRedux: NgRedux<AppState>, private eventActions: EventsActions) { }
@@ -23,5 +24,8 @@ export class EventsComponent implements OnInit {
     this.ngRedux.select(state => state.events).subscribe(res => {
       this.events = res.events;
     });
+  }
+  editEvent(eventId: any) {
+    this.router.navigate(['neweditevent', {id: eventId}])
   }
 }

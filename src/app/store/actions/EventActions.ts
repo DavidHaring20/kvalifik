@@ -13,6 +13,7 @@ export class EventsActions{
   static ADD_EVENT: string = 'ADD_EVENT';
   static UPDATE_EVENT: string = 'UPDATE_EVENT';
   static READ_EVENTS: string = 'READ_EVENTS';
+  static DELETE_EVENT: string = 'DELETE_EVENT';
 
 
   readEvents() {
@@ -55,5 +56,12 @@ export class EventsActions{
         payload: updatedEvent
     });
   }
+
+  // deleteEvent (eventId: Event) : void {
+  //   this.ngRedux.dispatch({
+  //     type: EventsActions.DELETE_EVENT,
+  //     payload: eventId
+  //   });
+  // }
 
 }

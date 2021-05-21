@@ -8,10 +8,10 @@
 
     <div class="flexGrid"> 
         <mat-form-field>
-            <input matInput type="text" placeholder="Search an event" />
+            <input matInput type="text" [(ngModel)]="search" placeholder="Search an event" />
         </mat-form-field>
-        <mat-card class="example-card" *ngFor="let myevent of events"> 
-           <app-event [event]="myevent"></app-event>
+        <mat-card class="example-card" *ngFor="let myevent of events | filterEvents: search"> 
+           <app-event [event]="myevent" (eventClicked)="editEvent($event)"></app-event>
         </mat-card>
     </div>
 

@@ -30,6 +30,7 @@ import { PostsPipe } from './posts.pipe';
 import { EventComponent } from './event/event.component';
 import { PastEventsComponent } from './past-events/past-events.component';
 import { NewediteventComponent } from './neweditevent/neweditevent.component';
+import { EventsPipe } from './events.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NewediteventComponent } from './neweditevent/neweditevent.component';
     PostsPipe,
     EventComponent,
     PastEventsComponent,
-    NewediteventComponent
+    NewediteventComponent,
+    EventsPipe
   ],
   imports: [
     BrowserModule,

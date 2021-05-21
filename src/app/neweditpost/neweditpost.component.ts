@@ -80,7 +80,5 @@ export class NeweditpostComponent implements OnInit {
    
   }
 
-
-
 }
 
