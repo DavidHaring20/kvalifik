@@ -19,4 +19,5 @@ export class PostComponent implements OnInit {
   editPost(id: string): void {
     this.postClicked.emit(id);
   }
+  
 }

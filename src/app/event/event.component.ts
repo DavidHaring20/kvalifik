@@ -19,7 +19,8 @@ export class EventComponent implements OnInit {
     this.eventClicked.emit(eventId);
   }
 
-  deleteEvent(eventId: string): void {
-    this.eventClicked.emit(eventId);
+  deleteEvent(eventId: number): void{
+    //this.eventClicked.emit(eventId);
+    console.log("eventId" + eventId);
   }
 }

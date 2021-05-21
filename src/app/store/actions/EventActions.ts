@@ -57,11 +57,11 @@ export class EventsActions{
     });
   }
 
-  // deleteEvent (eventId: Event) : void {
-  //   this.ngRedux.dispatch({
-  //     type: EventsActions.DELETE_EVENT,
-  //     payload: eventId
-  //   });
-  // }
+   deleteEvent (eventId: number) : void {
+     this.ngRedux.dispatch({
+      type: EventsActions.DELETE_EVENT,
+      payload: eventId
+    });
+   }
 
 }
