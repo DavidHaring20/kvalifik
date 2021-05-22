@@ -8,9 +8,9 @@ import { Event } from 'src/app/entities/Event';
 export let events = [
     {eventId :'1',eventName :'Euro Cup',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Søborg, Copenhagen',status:'published'} as Event,
     {eventId :'2',eventName :'Autumn Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Lyngby, Copenhagen',status:'published'} as Event,
-    {eventId :'1',eventName :'Spring Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Valby, Copenhagen',status:'published'} as Event,
-    {eventId :'1',eventName :'Nothing Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Nørrebro, Copenhagen',status:'published'} as Event,
-    {eventId :'1',eventName :'Winter Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Lygten, Copenhagen',status:'published'} as Event
+    {eventId :'3',eventName :'Spring Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Valby, Copenhagen',status:'published'} as Event,
+    {eventId :'4',eventName :'Nothing Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Nørrebro, Copenhagen',status:'published'} as Event,
+    {eventId :'5',eventName :'Winter Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Lygten, Copenhagen',status:'published'} as Event
   ];
 
   const EVENT_INITIAL_STATE: EventState = {events: events};
@@ -30,7 +30,11 @@ export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: a
           return tassign(state, {events: newArray});
 
          case EventsActions.DELETE_EVENT:
-            events = state.events.filter(({ eventId }) =>  eventId !== action.payload.eventId);
+           console.log(events);
+            // events = state.events.filter(({ eventId }) =>  eventId !== action.payload.eventId);
+
+            var removeIndex = events.map(event => event.eventId).indexOf(action.payload.eventId);
+            events.splice(removeIndex, 1);
             return tassign(state, {events});
 
       default:
