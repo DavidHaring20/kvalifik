@@ -57,7 +57,7 @@ export class EventsActions{
     });
   }
 
-   deleteEvent (eventId: number) : void {
+   deleteEvent (eventId: any) : void {
      this.ngRedux.dispatch({
       type: EventsActions.DELETE_EVENT,
       payload: eventId

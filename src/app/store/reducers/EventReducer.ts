@@ -30,7 +30,7 @@ export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: a
           return tassign(state, {events: newArray});
 
          case EventsActions.DELETE_EVENT:
-            events = state.events.filter(({ eventId }) => eventId !== action.payload.eventId);
+            events = state.events.filter(({ eventId }) =>  eventId !== action.payload.eventId);
             return tassign(state, {events});
 
       default:

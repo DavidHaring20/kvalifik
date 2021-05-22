@@ -28,5 +28,10 @@ export class EventsComponent implements OnInit {
   editEvent(eventId: any) {
     this.router.navigate(['neweditevent', {id: eventId}])
   }
-  
+  deleteEvent(eventId: any) {
+    //this.ngRedux.select(state => state.events).subscribe(res => {
+    //res.events.filter(({ eventId }) => eventId !== eventId);
+    this.eventActions.deleteEvent(eventId);
+    
+  }
 }

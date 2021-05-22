@@ -10,6 +10,7 @@ import { Event } from '../entities/Event';
 export class EventComponent implements OnInit {
   @Input() event: Event;
   @Output() eventClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() eventDeleted: EventEmitter<any> = new EventEmitter<any>() ;
 
   constructor() { }
 
@@ -20,7 +21,7 @@ export class EventComponent implements OnInit {
   }
 
   deleteEvent(eventId: number): void{
-    //this.eventClicked.emit(eventId);
+    this.eventDeleted.emit(eventId);
     console.log("eventId" + eventId);
   }
 }
