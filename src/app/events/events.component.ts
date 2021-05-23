@@ -29,10 +29,6 @@ export class EventsComponent implements OnInit {
     this.router.navigate(['neweditevent', {id: eventId}])
   }
   deleteEvent(eventId: any) {
-    //this.ngRedux.select(state => state.events).subscribe(res => {
-    //res.events.filter(({ eventId }) => eventId !== eventId);
-    // console.log("I am getting called form event.html through events.html.");
-    console.log(eventId);
     this.eventActions.deleteEvent(eventId);
   }
 }

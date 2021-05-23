@@ -16,28 +16,26 @@ export let events = [
   const EVENT_INITIAL_STATE: EventState = {events: events};
 
 export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: any) {
-    switch (action.type) {
-      case EventsActions.ADD_EVENT:
-        return tassign(state, {events: [...state.events, action.payload]});
+  switch (action.type) {
+    case EventsActions.ADD_EVENT:
+      return tassign(state, {events: [...state.events, action.payload]});
 
-      case EventsActions.READ_EVENTS:
-        return tassign(state, {events: action.payload});
+    case EventsActions.READ_EVENTS:
+      return tassign(state, {events: action.payload});
 
-        case EventsActions.UPDATE_EVENT:
-          const newArray = [...state.events];
-          const index = state.events.findIndex(event => event.eventId === action.payload.eventId);
-          newArray[index] = action.payload;
-          return tassign(state, {events: newArray});
+    case EventsActions.UPDATE_EVENT:
+      const newArray = [...state.events];
+      const index = state.events.findIndex(event => event.eventId === action.payload.eventId);
+      newArray[index] = action.payload;
+      return tassign(state, {events: newArray});
 
-         case EventsActions.DELETE_EVENT:
-           console.log(events);
-            // events = state.events.filter(({ eventId }) =>  eventId !== action.payload.eventId);
+    case EventsActions.DELETE_EVENT:
+      let idArray = events.map(event => event.eventId);
+      let removeIndex = idArray.indexOf(action.payload.eventId)
+      events.splice(removeIndex, 1);
+      return tassign(state, {events});
 
-            var removeIndex = events.map(event => event.eventId).indexOf(action.payload.eventId);
-            events.splice(removeIndex, 1);
-            return tassign(state, {events});
-
-      default:
-        return state;
-    }
+    default:
+    return state;
+  }
 }
