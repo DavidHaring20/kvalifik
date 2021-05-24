@@ -8,7 +8,6 @@ export class ApiService {
 
   constructor() { }
 
-
   getHttpOptions() {
     return {
       headers: new HttpHeaders({

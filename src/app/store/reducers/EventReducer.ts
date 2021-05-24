@@ -3,8 +3,6 @@ import { EventState } from '../Store';
 import { EventsActions } from '../actions/EventActions';
 import { Event } from 'src/app/entities/Event';
 
-
-
 export let events = [
     {eventId :'1',eventName :'Euro Cup',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Søborg, Copenhagen',status:'published'} as Event,
     {eventId :'2',eventName :'Autumn Pride',startTime : '16:00',endTime :'19:00',createdDate:new Date(2021 , 5, 1),location:'Lyngby, Copenhagen',status:'published'} as Event,
@@ -33,6 +31,7 @@ export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: a
       let idArray = events.map(event => event.eventId);
       let removeIndex = idArray.indexOf(action.payload.eventId)
       events.splice(removeIndex, 1);
+      console.log(events);
       return tassign(state, {events});
 
     default:

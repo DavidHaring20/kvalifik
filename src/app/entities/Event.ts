@@ -6,7 +6,4 @@ export class Event {
     createdDate: Date;
     location: string;
     status: string;
-    
 }
-
-

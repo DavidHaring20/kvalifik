@@ -37,7 +37,6 @@ export class NewediteventComponent implements OnInit {
       this.selectedEvent = new Event();
     }
 
-
     this.eventForm = this.fb.group({
       eventName: [this.selectedEvent.eventName, Validators.required],
       startTime: [this.selectedEvent.startTime, Validators.required],
@@ -48,7 +47,7 @@ export class NewediteventComponent implements OnInit {
   }
 
   onSubmitEvent() {
-    console.log(this.eventForm);
+    // console.log(this.eventForm);
 
     if (this.eventForm.valid) {
       if (!this.editMode) {
@@ -67,7 +66,6 @@ export class NewediteventComponent implements OnInit {
       this.router.navigate(['events']);
     }
   }
-
 }
 
 

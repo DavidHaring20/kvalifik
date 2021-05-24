@@ -63,5 +63,4 @@ export class EventsActions{
       payload: eventId
     });
    }
-
 }
