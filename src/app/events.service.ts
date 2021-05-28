@@ -31,7 +31,13 @@ export class EventsService extends ApiService {
   //   const url = "https://kvalifik-b9a39-default-rtdb.europe-west1.firebasedatabase.app/events.json?auth=" + token;
   //   return this.http.put(url, this.getHttpOptions());
   // }
+
+  deleteEvent(eventId : string){
+    const token = this.ngRedux.getState().users.token;
+    const url = "https://kvalifik-b9a39-default-rtdb.europe-west1.firebasedatabase.app/events/"+ eventId + "?auth=" + token;
+    return this.http.delete(url,  this.getHttpOptions());
+  }
 }
-  
+
 
 

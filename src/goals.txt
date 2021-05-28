@@ -5,3 +5,4 @@
     changes on data that is gathered from the database.
 
 3. Style the components: event, events and neweditevent.
+
