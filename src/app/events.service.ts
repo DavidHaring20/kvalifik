@@ -33,11 +33,9 @@ export class EventsService extends ApiService {
   // }
 
   deleteEvent(eventId : string){
+    console.log(eventId);
     const token = this.ngRedux.getState().users.token;
-    const url = "https://kvalifik-b9a39-default-rtdb.europe-west1.firebasedatabase.app/events/" + eventId + "/events.json?auth=" + token;
+    const url = "https://kvalifik-b9a39-default-rtdb.europe-west1.firebasedatabase.app/events/" + eventId + "/.json?auth=" + token;
     return this.http.delete(url, this.getHttpOptions());
   }
 }
-
-
-
