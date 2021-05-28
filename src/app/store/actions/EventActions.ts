@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { AppState } from './../Store';
-import { Event } from 'src/app/entities/Event';
-import { EventsService } from 'src/app/events.service';
+import { Event } from '../../entities/Event';
+import { EventsService } from '../../events.service';
 
 @Injectable({ providedIn: 'root'})
 export class EventsActions{
@@ -25,7 +25,7 @@ export class EventsActions{
       for(let eventId in result) {
         let eventObj = result[eventId];
         eventObj.eventId = eventId;
-        
+
         events.push(eventObj as Event);
       }
 
@@ -57,7 +57,7 @@ export class EventsActions{
     });
   }
 
-   deleteEvent (eventId: any) : void {
+   deleteEvent (eventId: string) : void {
      this.ngRedux.dispatch({
       type: EventsActions.DELETE_EVENT,
       payload: eventId

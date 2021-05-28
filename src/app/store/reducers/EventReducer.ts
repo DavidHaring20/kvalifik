@@ -28,11 +28,7 @@ export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: a
       return tassign(state, {events: newArray});
 
     case EventsActions.DELETE_EVENT:
-      let idArray = events.map(event => event.eventId);
-      let removeIndex = idArray.indexOf(action.payload.eventId)
-      events.splice(removeIndex, 1);
-      console.log(events);
-      return tassign(state, {events});
+      return tassign(state, {events: state.events.filter(event => event.eventId !== action.payload)});
 
     default:
     return state;
