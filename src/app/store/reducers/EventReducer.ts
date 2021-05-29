@@ -22,9 +22,11 @@ export function eventsReducer(state: EventState = EVENT_INITIAL_STATE, action: a
       return tassign(state, {events: action.payload});
 
     case EventsActions.UPDATE_EVENT:
+      console.log("i am update event");
       const newArray = [...state.events];
       const index = state.events.findIndex(event => event.eventId === action.payload.eventId);
       newArray[index] = action.payload;
+      console.log("Action payload" + action.payload);
       return tassign(state, {events: newArray});
 
     case EventsActions.DELETE_EVENT:        

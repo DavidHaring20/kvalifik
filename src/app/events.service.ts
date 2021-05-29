@@ -26,11 +26,11 @@ export class EventsService extends ApiService {
     return this.http.get(url, this.getHttpOptions());
   }
 
-  // updateEvents() {
-  //   const token = this.ngRedux.getState().users.token;
-  //   const url = "https://kvalifik-b9a39-default-rtdb.europe-west1.firebasedatabase.app/events.json?auth=" + token;
-  //   return this.http.put(url, this.getHttpOptions());
-  // }
+   updateEvent(eventId :string , event: Event) {
+    const token = this.ngRedux.getState().users.token;
+    const url = "https://kvalifik-b9a39-default-rtdb.europe-west1.firebasedatabase.app/events/" + eventId + "/.json?auth=" + token;
+     return this.http.put(url, event,  this.getHttpOptions());
+   }
 
   deleteEvent(eventId : string){
     console.log(eventId);

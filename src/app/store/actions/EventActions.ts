@@ -50,17 +50,19 @@ export class EventsActions{
     });
   }
 
-  updateEvent(updatedEvent: Event) : void {
+  updateEvent(eventId :string , event : Event) : void {
+    this.eventService.updateEvent(eventId, event).subscribe((result: any) => {
     this.ngRedux.dispatch({
         type: EventsActions.UPDATE_EVENT,
-        payload: updatedEvent
+        payload:eventId , event
+      })
     });
   }
 
    deleteEvent (eventId: string) : void {
     this.eventService.deleteEvent(eventId).subscribe((result: any) => {
       console.log(result)
-    
+  
       this.ngRedux.dispatch({
       type: EventsActions.DELETE_EVENT,
       payload: eventId

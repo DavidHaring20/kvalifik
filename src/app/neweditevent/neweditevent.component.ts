@@ -61,7 +61,7 @@ export class NewediteventComponent implements OnInit {
         this.selectedEvent.location = this.eventForm.value.location;
         this.selectedEvent.status = this.eventForm.value.status;
 
-        this.eventsActions.updateEvent(this.selectedEvent);
+        this.eventsActions.updateEvent(this.selectedEvent.eventId, this.selectedEvent);
       }
       this.router.navigate(['events']);
     }
