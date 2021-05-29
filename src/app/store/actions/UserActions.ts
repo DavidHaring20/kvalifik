@@ -3,11 +3,12 @@ import { NgRedux } from '@angular-redux/store';
 import { AppState } from './../Store';
 import { AuthService} from './../../auth.service';
 import { User } from 'src/app/entities/User';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root'})
 export class UserActions {
-
-    constructor (private ngRedux: NgRedux<AppState>, private authService: AuthService)
+  
+    constructor (private ngRedux: NgRedux<AppState>, private authService: AuthService, private router: Router)
     {} 
 
   static SIGNED_UP: string = 'SIGNED_UP'; 
@@ -41,6 +42,8 @@ export class UserActions {
             type: UserActions.LOGGED_IN,
             payload: {user, token: result.idToken}
           });
+
+          this.router.navigate(['events']);
         })
       });
   }
