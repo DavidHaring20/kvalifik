@@ -6,6 +6,7 @@ import { User } from 'src/app/entities/User';
 
 @Injectable({ providedIn: 'root'})
 export class UserActions {
+  router: any;
 
     constructor (private ngRedux: NgRedux<AppState>, private authService: AuthService)
     {} 
