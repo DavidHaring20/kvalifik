@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root'})
 export class UserActions {
-  
+
     constructor (private ngRedux: NgRedux<AppState>, private authService: AuthService, private router: Router)
     {} 
 

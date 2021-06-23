@@ -1,3 +1,1 @@
-1. LOGIN so we don't need to login twice. 
-
-2. Style the components: event, events and neweditevent.
+1. Style the components: event, events and neweditevent.
